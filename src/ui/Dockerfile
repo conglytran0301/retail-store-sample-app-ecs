@@ -23,8 +23,8 @@ RUN ./mvnw dependency:go-offline -B -q
 
 COPY ./src ./src
 
-RUN ./mvnw -DskipTests package -q && \
-    mv /target/ui-0.0.1-SNAPSHOT.jar /app.jar
+RUN ./mvnw -DskipTests package -q && mv target/ui-0.0.1-SNAPSHOT.jar /app.jar
+
 
 # Package Stage
 FROM public.ecr.aws/amazonlinux/amazonlinux:2023
